@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/natalia/Documentos/controle-gastos/backend/ControleGastos.API/ControleGastos.API.csproj": {}
+    "/home/natalia/Documentos/controle-gastos/backend/ControleGastos.API.csproj": {}
   },
   "projects": {
-    "/home/natalia/Documentos/controle-gastos/backend/ControleGastos.API/ControleGastos.API.csproj": {
+    "/home/natalia/Documentos/controle-gastos/backend/ControleGastos.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/natalia/Documentos/controle-gastos/backend/ControleGastos.API/ControleGastos.API.csproj",
+        "projectUniqueName": "/home/natalia/Documentos/controle-gastos/backend/ControleGastos.API.csproj",
         "projectName": "ControleGastos.API",
-        "projectPath": "/home/natalia/Documentos/controle-gastos/backend/ControleGastos.API/ControleGastos.API.csproj",
+        "projectPath": "/home/natalia/Documentos/controle-gastos/backend/ControleGastos.API.csproj",
         "packagesPath": "/home/natalia/.nuget/packages/",
-        "outputPath": "/home/natalia/Documentos/controle-gastos/backend/ControleGastos.API/obj/",
+        "outputPath": "/home/natalia/Documentos/controle-gastos/backend/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/natalia/.nuget/NuGet/NuGet.Config"

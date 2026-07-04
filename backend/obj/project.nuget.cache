@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XfJ/X2xewBTJmSvZFudOPNEtlGWo0QRGTMOfD+tMcn+nJv10ocCFNx7cEgjEkmmNEUlq+YecfcR/vReatEfrpg==",
+  "dgSpecHash": "kCiMKFAyPETPokBskCctnZknr9VZV3j7braaRt1oYXZRCeEta6VGv6lUd7YIRW6GBrh4m7i1DptDZc/ifJAlhQ==",
   "success": true,
-  "projectFilePath": "/home/natalia/Documentos/controle-gastos/backend/ControleGastos.API/ControleGastos.API.csproj",
+  "projectFilePath": "/home/natalia/Documentos/controle-gastos/backend/ControleGastos.API.csproj",
   "expectedPackageFiles": [
     "/home/natalia/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/home/natalia/.nuget/packages/microsoft.aspnetcore.openapi/8.0.28/microsoft.aspnetcore.openapi.8.0.28.nupkg.sha512",
