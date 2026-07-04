@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import { createPerson } from '../api/personService';
 import { AxiosError } from 'axios';
+import { FiUserPlus } from 'react-icons/fi';
 
-interface Props {
-  onPersonCreated: () => void;
-}
+interface Props { onPersonCreated: () => void; }
 
 export default function PersonForm({ onPersonCreated }: Props) {
   const [name, setName] = useState('');
@@ -32,22 +31,10 @@ export default function PersonForm({ onPersonCreated }: Props) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        placeholder="Nome"
-        value={name}
-        onChange={e => setName(e.target.value)}
-        required
-      />
-      <input
-        placeholder="Idade"
-        type="number"
-        value={age}
-        onChange={e => setAge(e.target.value === '' ? '' : Number(e.target.value))}
-        required
-        min="0"
-      />
+      <input placeholder="Nome completo" value={name} onChange={e => setName(e.target.value)} required />
+      <input placeholder="Idade" type="number" value={age} onChange={e => setAge(e.target.value === '' ? '' : Number(e.target.value))} required min="0" />
       <button type="submit" disabled={submitting}>
-        {submitting ? 'Salvando...' : 'Adicionar'}
+        <FiUserPlus /> {submitting ? 'Salvando...' : 'Adicionar'}
       </button>
       {error && <div className="error-message">{error}</div>}
     </form>
