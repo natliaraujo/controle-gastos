@@ -1,0 +1,458 @@
+:root {
+  --primary: #2b6cb0;
+  --primary-light: #4299e1;
+  --primary-dark: #1e4e8c;
+  --danger: #e53e3e;
+  --danger-light: #fc8181;
+  --success: #38a169;
+  --success-light: #68d391;
+  --bg: #edf2f7;
+  --card-bg: #ffffff;
+  --text: #2d3748;
+  --text-light: #718096;
+  --border: #e2e8f0;
+  --radius: 10px;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.03);
+  --shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.08);
+  --nav-height: 56px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Navegação */
+nav {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  height: var(--nav-height);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  transition: all 0.2s;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+nav a:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+nav a.active {
+  background: white;
+  color: var(--primary-dark);
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Conteúdo principal */
+main {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+  color: var(--primary-dark);
+  font-size: clamp(1.2rem, 4vw, 1.6rem);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Cards e formulários */
+form {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: flex-end;
+  transition: box-shadow 0.2s;
+}
+
+form:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+form input,
+form select {
+  padding: 0.7rem 0.85rem;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  flex: 1 1 180px;
+  min-width: 140px;
+  background: white;
+  transition: border-color 0.2s;
+}
+
+form input:focus,
+form select:focus {
+  outline: none;
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+}
+
+form button {
+  padding: 0.7rem 1.4rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+}
+
+form button:hover:not(:disabled) {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.error-message {
+  color: var(--danger);
+  background: #fed7d7;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  width: 100%;
+  border-left: 4px solid var(--danger);
+  font-weight: 500;
+  flex-basis: 100%;
+}
+
+/* Lista de pessoas */
+ul {
+  list-style: none;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li:hover {
+  background: #f7fafc;
+}
+
+li strong {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+li button {
+  background: var(--danger);
+  color: white;
+  border: none;
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+li button:hover {
+  background: #c53030;
+  transform: scale(1.05);
+}
+
+/* Tabelas */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+thead th {
+  background: var(--primary);
+  color: white;
+  padding: 0.85rem 1rem;
+  font-weight: 600;
+  text-align: left;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+tbody td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background: #f7fafc;
+}
+
+tfoot td {
+  padding: 0.9rem 1rem;
+  font-weight: 700;
+  background: #ebf4ff;
+  border-top: 2px solid var(--primary-light);
+  font-size: 0.95rem;
+}
+
+.text-success {
+  color: var(--success);
+  font-weight: 600;
+}
+
+.text-danger {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+.empty-message {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-light);
+  font-style: italic;
+  font-size: 1rem;
+}
+
+.loading {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-light);
+  font-size: 1.1rem;
+}
+
+/* Sugestões do autocomplete */
+.autocomplete-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  z-index: 10;
+  list-style: none;
+  max-height: 150px;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.autocomplete-suggestions li {
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s;
+}
+
+.autocomplete-suggestions li:hover {
+  background: #f0f4ff;
+}
+
+/* ========== RESPONSIVIDADE ========== */
+
+/* Tablets e telas médias */
+@media (max-width: 768px) {
+  nav {
+    padding: 0 1rem;
+    gap: 0.25rem;
+    height: auto;
+    padding: 0.75rem 1rem;
+  }
+
+  nav a {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  main {
+    margin: 1.5rem auto;
+    padding: 0 1rem;
+  }
+
+  form {
+    gap: 0.5rem;
+    padding: 1.25rem;
+  }
+
+  form input,
+  form select {
+    flex: 1 1 100%;
+    min-width: 100%;
+  }
+
+  form button {
+    width: 100%;
+  }
+
+  /* Tabelas viram cartões */
+  table,
+  table tbody,
+  table tr,
+  table td {
+    display: block;
+    width: 100%;
+  }
+
+  table thead {
+    display: none;
+  }
+
+  table tr {
+    margin-bottom: 1.5rem;
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  table td {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+
+  table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.3rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* Remove rótulo duplicado no tfoot quando data-label está vazio */
+  table td[data-label=""]::before {
+    content: none;
+  }
+
+  table td:last-child {
+    border-bottom: none;
+  }
+
+  /* Rodapé da tabela também vira card destacado */
+  table tfoot tr {
+    background: #ebf4ff;
+    font-weight: 700;
+    border: 2px solid var(--primary-light);
+  }
+
+  table tfoot td {
+    border-bottom: none;
+  }
+}
+
+/* Smartphones */
+@media (max-width: 480px) {
+  body {
+    font-size: 0.9rem;
+  }
+
+  nav {
+    justify-content: center;
+    gap: 0;
+  }
+
+  nav a {
+    flex: 1;
+    text-align: center;
+    padding: 0.5rem 0.25rem;
+    font-size: 0.8rem;
+  }
+
+  main {
+    margin: 1rem auto;
+    padding: 0 0.75rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  form {
+    padding: 1rem;
+  }
+
+  form input,
+  form select {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  li button {
+    align-self: flex-end;
+  }
+
+  .autocomplete-suggestions {
+    max-height: 120px;
+  }
+}
